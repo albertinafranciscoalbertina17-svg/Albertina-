@@ -1,0 +1,190 @@
+
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<title>Quadro Escolar Digital</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #eef2f7;
+}
+
+/* Barra superior */
+.toolbar {
+    background: #1f3c88;
+    color: white;
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.toolbar button {
+    background: #fff;
+    color: #1f3c88;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.toolbar button:hover {
+    background: #dbe3ff;
+}
+
+/* Área do quadro */
+.container {
+    padding: 20px;
+}
+
+/* Tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+th {
+    background: #1f3c88;
+    color: white;
+    padding: 12px;
+    border: 1px solid #aaa;
+}
+
+td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    vertical-align: top;
+}
+
+.trimestre {
+    background: #f0f3ff;
+    font-weight: bold;
+    width: 170px;
+    text-align: center;
+}
+
+.area {
+    min-height: 140px;
+    padding: 10px;
+    background: #fafafa;
+    border-radius: 5px;
+    outline: none;
+}
+
+/* Área editável */
+.area[contenteditable="true"] {
+    border: 2px dashed #bbb;
+}
+
+.area:focus {
+    border: 2px solid #1f3c88;
+    background: white;
+}
+</style>
+</head>
+
+<body>
+
+<!-- MENU -->
+<div class="toolbar">
+    <button onclick="addTask()">➕ Nova Tarefa</button>
+    <button onclick="addNote()">📝 Nova Nota</button>
+    <button onclick="addFile()">📎 Anexar Ficheiro</button>
+    <button onclick="clearBoard()">🗑 Limpar Célula</button>
+</div>
+
+<div class="container">
+<table>
+    <tr>
+        <th>HOME</th>
+        <th>T1</th>
+        <th>T2</th>
+        <th>T3</th>
+        <th>T4</th>
+        <th>T5</th>
+    </tr>
+
+    <tr>
+        <td class="trimestre">1º Trimestre</td>
+        <td><div class="area" contenteditable="true">Matemática: Números naturais<br>Português: Leitura</div></td>
+        <td><div class="area" contenteditable="true">História: Civilizações</div></td>
+        <td><div class="area" contenteditable="true">Ciências: Água</div></td>
+        <td><div class="area" contenteditable="true"></div></td>
+        <td><div class="area" contenteditable="true"></div></td>
+    </tr>
+
+    <tr>
+        <td class="trimestre">2º Trimestre</td>
+        <td><div class="area" contenteditable="true">Matemática: Frações</div></td>
+        <td><div class="area" contenteditable="true"></div></td>
+        <td><div class="area" contenteditable="true"></div></td>
+        <td><div class="area" contenteditable="true"></div></td>
+        <td><div class="area" contenteditable="true"></div></td>
+    </tr>
+
+    <tr>
+        <td class="trimestre">3º Trimestre</td>
+        <td><div class="area" contenteditable="true"></div></td>
+        <td><div class="area" contenteditable="true"></div></td>
+        <td><div class="area" contenteditable="true"></div></td>
+        <td><div class="area" contenteditable="true"></div></td>
+        <td><div class="area" contenteditable="true"></div></td>
+    </tr>
+
+    <tr>
+        <td class="trimestre">Fim do Ano</td>
+        <td><div class="area" contenteditable="true">Revisões</div></td>
+        <td><div class="area" contenteditable="true">Provas</div></td>
+        <td><div class="area" contenteditable="true">Projetos</div></td>
+        <td><div class="area" contenteditable="true"></div></td>
+        <td><div class="area" contenteditable="true"></div></td>
+    </tr>
+
+</table>
+</div>
+
+<script>
+let activeCell = null;
+
+// Detecta onde o utilizador está a escrever
+document.querySelectorAll('.area').forEach(cell => {
+    cell.addEventListener('click', () => {
+        activeCell = cell;
+    });
+});
+
+function addTask() {
+    if (!activeCell) return alert("Clique primeiro numa célula!");
+    activeCell.innerHTML += "<br>📌 Nova tarefa...";
+}
+
+function addNote() {
+    if (!activeCell) return alert("Clique primeiro numa célula!");
+    activeCell.innerHTML += "<br>📝 Nova nota...";
+}
+
+function addFile() {
+    if (!activeCell) return alert("Clique primeiro numa célula!");
+    const input = document.createElement("input");
+    input.type = "file";
+    input.onchange = () => {
+        const file = input.files[0];
+        activeCell.innerHTML += `<br>📎 ${file.name}`;
+    };
+    input.click();
+}
+
+function clearBoard() {
+    if (!activeCell) return alert("Clique primeiro numa célula!");
+    activeCell.innerHTML = "";
+}
+</script>
+
+</body>
+</html>
