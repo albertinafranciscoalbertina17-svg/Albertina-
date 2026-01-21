@@ -1,4 +1,48 @@
-DOCTYPE html>
+Bem-vindo à minha página
+Home	Primeiro Trimestre	Segundo Trimestre	Terceiro / trimestre
+HOME
+
+T2
+T3
+T4
+T5	T1 – Enviar link do Git
+Cole o link do GitHub
+ Enviar
+T2 – Formulário Pessoal
+Nome:
+
+Email:
+
+Idade:
+
+Enviar
+T3 – Tabela
+Nome	Curso
+Ana	Informática
+João	Web
+T4 – Imagem, Vídeo e Áudio
+Nenhum ficheiro selecionado
+
+Nenhum ficheiro selecionado
+
+Nenhum ficheiro selecionado	T1 – O que é CSS
+CSS (Cascading Style Sheets) é uma linguagem usada para estilizar páginas HTML, definindo cores, tamanhos, fontes e layout.
+
+T2 – Importância do CSS
+O CSS separa o conteúdo do design, deixando o site mais bonito, organizado e fácil de manter.
+
+T3 – Tipos de CSS
+CSS Inline
+CSS Interno
+CSS Externo
+T4 – Página com tipos de CSS
+Este texto usa CSS INLINE.
+
+Este texto usa CSS INTERNO.
+
+Este texto representa CSS EXTERNO (fundo definido).
+
+Fim do TrimestreDOCTYPE html>
 <html lang="pt">
 <head>
 <meta charset="UTF-8">
