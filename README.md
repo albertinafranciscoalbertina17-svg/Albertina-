@@ -1,4 +1,29 @@
 Bem-vindo à minha página
+Esta página está organizada por trimestres para o aprendizado de HTML e CSS.
+
+home	T1	T2	T3	T4	T5
+1º Trimestre
+(HTML)	Link do GitHub
+Acessar GitHub	Formulário HTML			
+2º Trimestre
+(CSS)	O que é CSS	Importância do CSS	Tipos de CSS
+(Inline, Interno e Externo)	Página HTML com:
+Parágrafo com CSS inline
+Título com CSS interno
+Fundo com CSS externo
+🎨 CSS Externo (estilo.css) Este ficheiro será usado no 2º trimestre para mudar o fundo da página. Copiar código Css body { background-color: #f2f2f2; font-family: Arial, sans-serif; } h1 { color: #2c3e50; }
+Quadro de Planeamento do Ano Letivo
+HOME	T1	T2	T3	T4	T5
+1º Trimestre	
+Conteúdos do T1
+Conteúdos do T2
+Conteúdos do T3
+Conteúdos do T4
+Conteúdos do T5
+2º Trimestre	
+3º Trimestre	
+Fim do Ano	
+--- 🧠 O que esse quadro permite Você terá: HOME → visão geral T1 a T5 → períodos, unidades, módulos ou semanas Trimestres → organização anual Espaço grande para escrever (as caixas aumentam se você puxar) --- Se quiser, posso agora: Adicionar cores por disciplina Criar uma versão para imprimir Ou fazer uma versão que guarda automaticamente o que você escreve 💾Bem-vindo à minha página
 Home	Primeiro Trimestre	Segundo Trimestre	Terceiro / trimestre
 HOME
 
@@ -85,78 +110,3 @@ function copyText(id) {
 </head>
 
 <body>
-
-<table>
-<tr>
-    <th>HOME</th>
-    <th>1º Trimestre</th>
-    <th>2º Trimestre</th>
-    <th>3º Trimestre</th>
-    <th>Fim</th>
-</tr>
-
-<!-- T2 -->
-<tr>
-<th>T2</th>
-<td>
-    🔗 Enviar links visitados<br>
-    <input type="text" placeholder="Cole aqui o link"><br><br>
-
-    📎 Enviar ficheiro<br>
-    <input type="file"><br><br>
-
-    💻 Código<br>
-    <textarea id="c1"></textarea>
-    <button onclick="copyText('c1')">Copiar</button>
-</td>
-<td>O que é CSS?
-é uma linguagem,usado para difinir a parência de estilo da pagina web.como titulo,texto,imagens,entre outros.</td>
-<td></td>
-<td></td>
-</tr>
-
-<!-- T3 -->
-<tr>
-<th>T3</th>
-<td>
-    📝 Fazer formulário pessoal<br>
-    <input type="text" placeholder="Nome"><br>
-    <input type="email" placeholder="Email"><br>
-</td>
-<td>A importância do CSS,é fundamental no desenvolvimento web,porque css transforma uma pagina simples em uma experência bonita.</td>
-<td></td>
-<td></td>
-</tr>
-
-<!-- T4 -->
-<tr>
-<th>T4</th>
-<td>
-    📊 Criar tabela<br>
-    <textarea id="c2"></textarea>
-    <button onclick="copyText('c2')">Copiar</button>
-</td>
-<td>Os tipos de CSS,inline,interno,externo,
-inline,ajustes rápido,interno,pagina única,externo sites profissionais.</td>
-<td></td>
-<td></td>
-</tr>
-
-<!-- T5 -->
-<tr>
-<th>T5</th>
-<td>
-    🖼️ Criar página com imagem, áudio e vídeo<br><br>
-    Imagem: <input type="file"><br><br>
-    Áudio: <input type="file"><br><br>
-    Vídeo: <input type="file">
-</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-
-</table>
-
-</body>
-</html>
