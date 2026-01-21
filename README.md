@@ -1,5 +1,5 @@
 Bem-vindo à minha página
-Esta página está organizada por trimestres para o aprendizado de HTML e CSS.
+ trimestres para o aprendizado de HTML e CSS.
 
 home	T1	T2	T3	T4	T5
 1º Trimestre
@@ -11,7 +11,7 @@ Acessar GitHub	Formulário HTML
 Parágrafo com CSS inline
 Título com CSS interno
 Fundo com CSS externo
-🎨 CSS Externo (estilo.css) Este ficheiro será usado no 2º trimestre para mudar o fundo da página. Copiar código Css body { background-color: #f2f2f2; font-family: Arial, sans-serif; } h1 { color: #2c3e50; }
+🎨 CSS Externo (estilo.css) . Copiar código Css body { background-color: #f2f2f2; font-family: Arial, sans-serif; } h1 { color: #2c3e50; }
 Quadro de Planeamento do Ano Letivo
 HOME	T1	T2	T3	T4	T5
 1º Trimestre	
@@ -23,9 +23,6 @@ Conteúdos do T5
 2º Trimestre	
 3º Trimestre	
 Fim do Ano	
---- 🧠 O que esse quadro permite Você terá: HOME → visão geral T1 a T5 → períodos, unidades, módulos ou semanas Trimestres → organização anual Espaço grande para escrever (as caixas aumentam se você puxar) --- Se quiser, posso agora: Adicionar cores por disciplina Criar uma versão para imprimir Ou fazer uma versão que guarda automaticamente o que você escreve 💾Bem-vindo à minha página
-Home	Primeiro Trimestre	Segundo Trimestre	Terceiro / trimestre
-HOME
 
 T2
 T3
