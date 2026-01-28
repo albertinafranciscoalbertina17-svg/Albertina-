@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home | Trabalho de Programação</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #e0e7ff, #f8fafc);
+      min-height: 100vh;
+    }
+ 
+    .header {
+      background: #1e3a8a;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+    }
+
+    .header h1 a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      background: none;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    nav {
+      display: flex;
+      gap: 12px;
+    }
+
+    nav a {
+      text-decoration: none;
+      padding: 8px 14px;
+      background: #2563eb;
+      color: #fff;
+      border-radius: 20px;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background: #93c5fd;
+      color: #000;
+    }
+ 
+    main {
+      display: flex;
+      gap: 40px;
+      padding: 50px;
+      align-items: flex-start;
+    }
+ 
+    .boas-vindas {
+      flex: 1;
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .boas-vindas h2 {
+      color: #1e3a8a;
+      margin-bottom: 15px;
+    }
+
+    .boas-vindas p {
+      color: #334155;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+ 
+    .dados {
+      width: 320px;
+      background: #1e40af;
+      color: #fff;
+      padding: 30px;
+      border-radius: 15px;
+    }
+
+    .dados h3 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+
+    .dados p {
+      margin-bottom: 10px;
+      font-size: 15px;
+    }
+
+ 
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 15px;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      main {
+        flex-direction: column;
+        padding: 25px;
+      }
+
+      .dados {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="header">
+  <h1><a href="index.html">Meu Site</a></h1>
+  <button class="menu-toggle">☰</button>
+
+  <nav id="menu">
+    
+    <a href="pag/trimestre1.html">I Trimestre</a>
+    <a href="pag/trimestre2.html">II Trimestre</a>
+    <a href="pag/trimestre3.html">III Trimestre</a>
+  </nav>
+</header>
+
+<main>
+
+ 
+  <div class="boas-vindas">
+    <h2>Seja bem-vindo/a ao meu site</h2>
+
+    <p>
+      Este site foi desenvolvido como parte do trabalho escolar da disciplina
+      <strong>Técnicas de Linguagem de Programação (TLP)</strong>.
+    </p>
+
+    <p>
+      O objetivo deste projeto é aplicar os conhecimentos adquiridos em
+      HTML, CSS e organização de páginas web, apresentando os conteúdos
+      estudados ao longo dos trimestres.
+    </p>
+
+    <p>
+      Aqui poderão ser encontrados os trabalhos correspondentes a cada
+      trimestre, bem como informações sobre a autora do projeto.
+    </p>
+  </div>
+
+
+  <div class="dados">
+    <h3>Dados da Aluna</h3>
+
+    <p><strong>Nome:</strong> Albertina Francisco</p>
+    <p><strong>Nº:</strong> 1</p>
+    <p><strong>Sala:</strong> 18</p>
+    <p><strong>Turma:</strong> ANS</p>
+  </div>
+
+</main>
+
+<script>
+  const toggle = document.querySelector('.menu-toggle');
+  const menu = document.getElementById('menu');
+
+  toggle.addEventListener('click', () => {
+    menu.classList.toggle('active');
+  });
+</script>
+
+</body>
+</html>
