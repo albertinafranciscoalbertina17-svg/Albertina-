@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I Trimestre | Conteúdos Multimédia</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    body {
+      background: #f1f5f9;
+      min-height: 100vh;
+    }
+
+    /* HEADER */
+    .header {
+      position: sticky;
+      top: 0;
+      background: #0f172a;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 10;
+    }
+
+    .header h1 a {
+      text-decoration: none;
+      color: #e0f2fe;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      gap: 10px;
+    }
+
+    nav a {
+      text-decoration: none;
+      padding: 8px 16px;
+      background: #0284c7;
+      color: #fff;
+      border-radius: 20px;
+      font-weight: bold;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background: #bae6fd;
+      color: #0f172a;
+    }
+
+    /* MAIN */
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 50px 25px;
+    }
+
+    .titulo {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .titulo h1 {
+      color: #0c4a6e;
+      margin-bottom: 10px;
+    }
+
+    .titulo p {
+      color: #475569;
+    }
+
+    /* CARDS MULTIMÉDIA */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 18px;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.1);
+    }
+
+    .card h2 {
+      color: #075985;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    img, video, audio {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    /* RESPONSIVO */
+    @media (max-width: 768px) {
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      main {
+        padding: 35px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="header">
+  <h1><a href="../index.html">HOME</a></h1>
+
+  <nav>
+    <a href="trimestre1.html">I Trimestre</a>
+    <a href="trimestre2.html">II Trimestre</a>
+    <a href="trimestre3.html">III Trimestre</a>
+  </nav>
+</header>
+
+<main>
+
+  <div class="titulo">
+    <h1>Conteúdos Multimédia</h1>
+    <p>Exemplos de imagem, vídeo e áudio utilizados em páginas Web</p>
+  </div>
+
+  <div class="grid">
+
+    <div class="card">
+      <h2>Imagem</h2>
+      <img src="../files/fhot.jpeg" alt="Imagem do trabalho">
+    </div>
+
+    <div class="card">
+      <h2>Vídeo</h2>
+      <video src="../files/vid.mp4" controls></video>
+    </div>
+
+    <div class="card">
+      <h2>Áudio</h2>
+      <audio src="../files/music.mpeg" controls></audio>
+    </div>
+
+  </div>
+
+</main>
+
+</body>
+</html>

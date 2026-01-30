@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I Trimestre | Trabalhos de Programação</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #dbeafe, #eff6ff);
+      min-height: 100vh;
+    }
+
+    /* HEADER */
+    .header {
+      background: #0f172a; /* azul petróleo */
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+    }
+
+    .header h1 a {
+      color: #e0f2fe;
+      text-decoration: none;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      gap: 10px;
+    }
+
+    nav a {
+      text-decoration: none;
+      padding: 8px 14px;
+      background: #0284c7; /* azul médio */
+      color: #fff;
+      border-radius: 20px;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background: #bae6fd;
+      color: #0f172a;
+    }
+
+    /* MAIN */
+    main {
+      padding: 50px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .trimestre-box {
+      width: 100%;
+      max-width: 900px;
+      background: #ffffff;
+      padding: 35px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.15);
+    }
+
+    .trimestre-box h2 {
+      color: #0c4a6e; /* azul escuro */
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .trimestre-box p {
+      color: #334155;
+      text-align: center;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    /* TRABALHOS */
+    .trabalhos {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .trabalhos a {
+      padding: 15px 25px;
+      background: #0369a1; /* azul forte */
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 30px;
+      transition: 0.3s;
+      min-width: 80px;
+      text-align: center;
+    }
+
+    .trabalhos a:hover {
+      background: #bae6fd;
+      color: #0f172a;
+      transform: translateY(-3px);
+    }
+
+    /* RESPONSIVO */
+    @media (max-width: 768px) {
+      main {
+        padding: 25px;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="header">
+  <h1><a href="../index.html">HOME</a></h1>
+
+  <nav>
+    <a href="trimestre1.html">I Trimestre</a>
+    <a href="trimestre2.html">II Trimestre</a>
+    <a href="trimestre3.html">III Trimestre</a>
+  </nav>
+</header>
+
+<main>
+  <div class="trimestre-box">
+
+    <h2>Iº Trimestre</h2>
+
+    <p>
+      Nesta secção estão organizados os trabalhos desenvolvidos durante
+      o <strong>Iº Trimestre</strong> na disciplina de
+      <strong>Técnicas de Linguagem de Programação (TLP)</strong>.
+    </p>
+
+    <div class="trabalhos">
+      <a href="t1.html">T1</a>
+      <a href="t2.html">T2</a>
+      <a href="t3.html">T3</a>
+      <a href="t4.html">T4</a>
+      <a href="t5.html">T5</a>
+      <a href="t6.html">T6</a>
+    </div>
+
+  </div>
+</main>
+
+</body>
+</html>

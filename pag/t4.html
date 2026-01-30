@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I Trimestre | Multimédia e Formulário</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    body {
+      background: #f1f5f9;
+      min-height: 100vh;
+    }
+
+    /* HEADER */
+    .header {
+      position: sticky;
+      top: 0;
+      background: #0f172a;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 10;
+    }
+
+    .header h1 a {
+      text-decoration: none;
+      color: #e0f2fe;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      gap: 10px;
+    }
+
+    nav a {
+      text-decoration: none;
+      padding: 8px 16px;
+      background: #0284c7;
+      color: #fff;
+      border-radius: 20px;
+      font-weight: bold;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background: #bae6fd;
+      color: #0f172a;
+    }
+
+    /* MAIN */
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 50px 25px;
+    }
+
+    .card {
+      background: #ffffff;
+      padding: 35px;
+      border-radius: 18px;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.1);
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #075985;
+    }
+
+    img, video, audio {
+      width: 100%;
+      max-width: 500px;
+      display: block;
+      margin: auto;
+      border-radius: 10px;
+    }
+
+    /* FORM */
+    form {
+      max-width: 600px;
+      margin: auto;
+    }
+
+    label {
+      display: block;
+      margin-top: 12px;
+      font-weight: bold;
+      color: #334155;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      border-radius: 6px;
+      border: 1px solid #cbd5f5;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      background: #0284c7;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background: #0369a1;
+    }
+
+    /* TABLE */
+    table {
+      width: 100%;
+      max-width: 700px;
+      margin: auto;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 14px;
+      border: 1px solid #e2e8f0;
+      text-align: center;
+    }
+
+    th {
+      background: #0284c7;
+      color: white;
+    }
+
+    td {
+      color: #334155;
+    }
+
+    /* RESPONSIVO */
+    @media (max-width: 768px) {
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      main {
+        padding: 35px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="header">
+  <h1><a href="../index.html">HOME</a></h1>
+
+  <nav>
+    <a href="trimestre1.html">I Trimestre</a>
+    <a href="trimestre2.html">II Trimestre</a>
+    <a href="trimestre3.html">III Trimestre</a>
+  </nav>
+</header>
+
+<main>
+
+  <div class="card">
+    <h2>Imagem</h2>
+    <img src="../files/fhot.jpeg" alt="Imagem exemplo">
+  </div>
+
+  <div class="card">
+    <h2>Vídeo</h2>
+    <video controls>
+      <source src="../files/vid.mp4" type="video/mp4">
+      Seu navegador não suporta vídeo.
+    </video>
+  </div>
+
+  <div class="card">
+    <h2>Áudio</h2>
+    <audio controls>
+      <source src="../files/music.mpeg" type="audio/mpeg">
+      Seu navegador não suporta áudio.
+    </audio>
+  </div>
+
+  <div class="card">
+    <h2>Formulário de Cadastro</h2>
+    <form id="formCadastro">
+      <label>Nome</label>
+      <input type="text" id="nome" required>
+
+      <label>Email</label>
+      <input type="email" id="email" required>
+
+      <label>Telefone</label>
+      <input type="text" id="telefone" required>
+
+      <button type="submit">Cadastrar</button>
+    </form>
+  </div>
+
+  <div class="card">
+    <h2>Dados Cadastrados</h2>
+    <table id="tabelaDados">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Email</th>
+          <th>Telefone</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+</main>
+
+<script>
+  document.getElementById("formCadastro").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let nome = document.getElementById("nome").value;
+    let email = document.getElementById("email").value;
+    let telefone = document.getElementById("telefone").value;
+
+    let tabela = document.getElementById("tabelaDados").querySelector("tbody");
+    let novaLinha = tabela.insertRow();
+
+    novaLinha.insertCell(0).innerText = nome;
+    novaLinha.insertCell(1).innerText = email;
+    novaLinha.insertCell(2).innerText = telefone;
+
+    this.reset();
+  });
+</script>
+
+</body>
+</html>

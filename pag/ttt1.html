@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I Trimestre | Sintaxe CSS</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    body {
+      background: #f1f5f9;
+      min-height: 100vh;
+    }
+ 
+    .header {
+      position: sticky;
+      top: 0;
+      background: #0f172a;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 10;
+    }
+
+    .header h1 a {
+      text-decoration: none;
+      color: #e0f2fe;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      gap: 10px;
+    }
+
+    nav a {
+      text-decoration: none;
+      padding: 8px 16px;
+      background: #0284c7;
+      color: #fff;
+      border-radius: 20px;
+      font-weight: bold;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background: #bae6fd;
+      color: #0f172a;
+    }
+
+ 
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 50px 25px;
+    }
+
+    .titulo {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+ 
+   
+    @media (max-width: 768px) {
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      main {
+        padding: 35px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="header">
+  <h1><a href="../index.html">HOME</a></h1>
+
+  <nav>
+    <a href="trimestre1.html">I Trimestre</a>
+    <a href="trimestre2.html">II Trimestre</a>
+    <a href="trimestre3.html">III Trimestre</a>
+  </nav>
+</header>
+
+<main>
+
+  <div class="titulo">
+    
+  </div>
+
+</main>
+
+</body>
+</html>
