@@ -69,7 +69,97 @@
       margin-bottom: 40px;
     }
  
-   
+   .cards {
+            display: flex;
+            justify-content: space-around;
+            padding: 40px 20px;
+            background: white;
+        }
+
+        .card {
+            width: 30%;
+           
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+
+.cardi {
+           
+            width: 100%;
+            height: 460px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 15px;
+}
+
+         
+
+        .card h3 {
+            margin-bottom: 10px;
+        }
+
+       
+        .conteudo {
+            display: flex;
+            gap: 20px;
+            padding: 40px 20px;
+        }
+
+        .box-texto {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            width: 50%;
+        }
+
+        .box-texto h2 {
+            margin-bottom: 10px;
+            color: #0f172a;
+        }
+
+
+        footer {
+            background-color: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 20px;
+        }
+
+        footer p {
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+
+            .menu-btn {
+                display: block;
+            }
+
+            .sidebar {
+                display: none;
+            }
+
+            .sidebar.active {
+                display: block;
+            }
+
+            .cards {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .card {
+                width: 100%;
+            }
+
+            .conteudo {
+                flex-direction: column;
+            }
+            }
+  
+
     @media (max-width: 768px) {
       nav {
         flex-wrap: wrap;
@@ -98,7 +188,56 @@
 <main>
 
   <div class="titulo">
+    <section class="cards">
+    <div >
+        <img src="../files/WhatsApp Image 2026-02-23 at 15.47.18.jpeg" class="cardi"> 
+        
+      </div>
+
+    <div  >
+        <img src="../files/WhatsApp Image 2026-02-23 at 15.47.19.jpeg"  class="cardi">
+         
+      </div>
+
     
+</section>
+
+<section class="conteudo">
+    <div class="box-texto">
+         <h2>Seja bem-vindo/a ao meu site</h2>
+
+    <p>
+      Este site foi desenvolvido como parte do trabalho escolar da disciplina
+      <strong>Técnicas de Linguagem de Programação (TLP)</strong>.
+    </p>
+
+    <p>
+      O objetivo deste projeto é aplicar os conhecimentos adquiridos em
+      HTML, CSS e organização de páginas web, apresentando os conteúdos
+      estudados ao longo dos trimestres.
+    </p>
+
+    <p>
+      Aqui poderão ser encontrados os trabalhos correspondentes a cada
+      trimestre, bem como informações sobre a autora do projeto.
+    </p>
+    </div>
+
+    <div class="box-texto">
+        <h3>Meus Dados</h3>
+
+    <p><strong>Nome:</strong> Albertina Francisco</p>
+    <p><strong>Nº:</strong> 1</p>
+    <p><strong>Sala:</strong> 18</p>
+    <p><strong>Turma:</strong> ANS</p>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 - Trabalho de TLP</p>
+    <p>Desenvolvido pela Maria Pacheco</p>
+</footer>
+
   </div>
 
 </main>
