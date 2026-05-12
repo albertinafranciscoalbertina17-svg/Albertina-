@@ -1,107 +1,205 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>I Trimestre | Sintaxe CSS</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Segoe UI", Arial, sans-serif;
-    }
+    <title>Sistema de Média Escolar</title>
 
-    body {
-      background: #f1f5f9;
-      min-height: 100vh;
-    }
- 
-    .header {
-      position: sticky;
-      top: 0;
-      background: #0f172a;
-      padding: 15px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 10;
-    }
+    <style>
 
-    .header h1 a {
-      text-decoration: none;
-      color: #e0f2fe;
-      font-size: 22px;
-      font-weight: bold;
-    }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
 
-    nav {
-      display: flex;
-      gap: 10px;
-    }
+        body{
+            background: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
 
-    nav a {
-      text-decoration: none;
-      padding: 8px 16px;
-      background: #0284c7;
-      color: #fff;
-      border-radius: 20px;
-      font-weight: bold;
-      font-size: 14px;
-      transition: 0.3s;
-    }
+        .container{
+            width: 420px;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        }
 
-    nav a:hover {
-      background: #bae6fd;
-      color: #0f172a;
-    }
+        h1{
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
 
- 
-    main {
-      max-width: 1100px;
-      margin: auto;
-      padding: 50px 25px;
-    }
+        input{
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
 
-    .titulo {
-      text-align: center;
-      margin-bottom: 40px;
-    }
- 
-   
-    @media (max-width: 768px) {
-      nav {
-        flex-wrap: wrap;
-        justify-content: center;
-      }
+        button{
+            width: 100%;
+            padding: 12px;
+            border: none;
+            background: #007bff;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
 
-      main {
-        padding: 35px 20px;
-      }
-    }
-  </style>
+        button:hover{
+            background: #0056b3;
+        }
+
+        #resultado{
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            background: #f8f7f8;
+            line-height: 30px;
+            font-size: 18px;
+        }
+
+        .aprovado{
+            color: green;
+            font-weight: bold;
+        }
+
+        .recurso{
+            color: orange;
+            font-weight: bold;
+        }
+
+        .reprovado{
+            color: red;
+            font-weight: bold;
+        }
+
+    </style>
+
 </head>
-
 <body>
 
-<header class="header">
-  <h1><a href="../index.html">HOME</a></h1>
+    <div class="container">
 
-  <nav>
-    <a href="trimestre1.html">I Trimestre</a>
-    <a href="trimestre2.html">II Trimestre</a>
-    <a href="trimestre3.html">III Trimestre</a>
-  </nav>
-</header>
+        <h1>Site de cálculo dam´dia</h1>
 
-<main>
+        <input type="text" id="nome" placeholder="Nome do aluno">
 
-  <div class="titulo">
-    
-  </div>
+        <input type="text" id="disciplina" placeholder="Disciplina">
 
-</main>
+        <input type="number" id="nota1" placeholder="Nota do 1º Trimestre">
+
+        <input type="number" id="nota2" placeholder="Nota do 2º Trimestre">
+
+        <input type="number" id="nota3" placeholder="Nota do 3º Trimestre">
+
+        <button onclick="calcularMedia()">
+            Calcular média
+        </button>
+
+        <div id="resultado">
+        
+        </div>
+
+    </div>
+
+    <script>
+
+        function calcularMedia(){
+
+            let nome = document.getElementById("nome").value;
+
+            let disciplina = document.getElementById("disciplina").value;
+
+            let nota1 = Number(document.getElementById("nota1").value);
+
+            let nota2 = Number(document.getElementById("nota2").value);
+
+            let nota3 = Number(document.getElementById("nota3").value);
+
+            // VALIDAÇÃO
+            if(
+                nota1 < 0 || nota1 > 20 ||
+                nota2 < 0 || nota2 > 20 ||
+                nota3 < 0 || nota3 > 20
+            ){
+
+                alert("Não é possível inserir notas menores que 0 ou maiores que 20.");
+
+                return;
+            }
+
+            // MÉDIA
+            let media = (nota1 + nota2 + nota3) / 3;
+
+            let situacao = "";
+
+            let classe = "";
+
+            // RESULTADO
+            if(media >= 10 && media <= 20){
+
+                situacao = "APROVADO";
+
+                classe = "aprovado";
+            }
+
+            else if(media >= 8 && media <= 9){
+
+                situacao = "RECURSO";
+
+                classe = "recurso";
+            }
+
+            else if(media < 7 || media == 0){
+
+                situacao = "REPROVADO";
+
+                classe = "reprovado";
+            }
+
+            else{
+
+                situacao = "FORA DO INTERVALO DEFINIDO";
+
+                classe = "reprovado";
+            }
+
+            // EXIBIR RESULTADO
+            document.getElementById("resultado").innerHTML = `
+
+                <p><strong>Aluno:</strong> ${nome}</p>
+
+                <p><strong>Disciplina:</strong> ${disciplina}</p>
+
+                <p><strong>1º Trimestre:</strong> ${nota1}</p>
+
+                <p><strong>2º Trimestre:</strong> ${nota2}</p>
+
+                <p><strong>3º Trimestre:</strong> ${nota3}</p>
+
+                <p><strong>Média:</strong> ${media.toFixed(1)}</p>
+
+                <p>
+                    <strong>Situação:</strong> 
+                    <span class="${classe}">${situacao}</span>
+                </p>
+
+            `;
+        }
+
+    </script>
 
 </body>
 </html>
