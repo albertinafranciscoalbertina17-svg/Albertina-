@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>I Trimestre | Sintaxe CSS</title>
+  <title>Lista | Sistema de Avaliação</title>
 
   <style>
     * {
@@ -14,70 +14,224 @@
     }
 
     body {
-      background: #f1f5f9;
+      background: linear-gradient(135deg, #e0e7ff, #f8fafc);
       min-height: 100vh;
     }
  
     .header {
-      position: sticky;
-      top: 0;
-      background: #0f172a;
+      background: #1e3a8a;
       padding: 15px 30px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      z-index: 10;
+      position: sticky;
+      top: 0;
     }
 
     .header h1 a {
+      color: #fff;
       text-decoration: none;
-      color: #e0f2fe;
       font-size: 22px;
       font-weight: bold;
     }
 
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      background: none;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+    }
+
     nav {
       display: flex;
-      gap: 10px;
+      gap: 12px;
     }
 
     nav a {
       text-decoration: none;
-      padding: 8px 16px;
-      background: #0284c7;
+      padding: 8px 14px;
+      background: #2563eb;
       color: #fff;
       border-radius: 20px;
-      font-weight: bold;
       font-size: 14px;
       transition: 0.3s;
     }
 
     nav a:hover {
-      background: #bae6fd;
-      color: #0f172a;
+      background: #93c5fd;
+      color: #000;
     }
-
  
     main {
-      max-width: 1100px;
-      margin: auto;
-      padding: 50px 25px;
+      display: flex;
+      justify-content: center;
+      padding: 50px;
     }
 
-    .titulo {
+    .card {
+      background: #ffffff;
+      padding: 35px;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      max-width: 1300px;
+      width: 100%;
+    }
+
+    .card h2 {
+      color: #1e3a8a;
+      margin-bottom: 10px;
       text-align: center;
-      margin-bottom: 40px;
     }
- 
-   
-    @media (max-width: 768px) {
-      nav {
-        flex-wrap: wrap;
-        justify-content: center;
-      }
 
+    .subtitulo {
+      text-align: center;
+      color: #334155;
+      margin-bottom: 25px;
+      font-size: 14px;
+    }
+
+    .btn-limpar {
+      background: #1e3a8a;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 40px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-bottom: 25px;
+      transition: 0.3s;
+    }
+
+    .btn-limpar:hover {
+      background: #2563eb;
+    }
+
+    .tabela-wrapper {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 14px;
+      text-align: left;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    th {
+      background: #e0e7ff;
+      color: #1e3a8a;
+      font-weight: bold;
+    }
+
+    tr:hover {
+      background: #f8fafc;
+    }
+
+    .btn-excluir {
+      background: #dc3545;
+      color: #fff;
+      border: none;
+      padding: 5px 12px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn-excluir:hover {
+      background: #b91c2c;
+    }
+
+    .status-aprovado {
+      background: #d4edda;
+      color: #155724;
+      padding: 4px 10px;
+      border-radius: 20px;
+      display: inline-block;
+      font-size: 12px;
+    }
+
+    .status-recuperacao {
+      background: #fff3cd;
+      color: #856404;
+      padding: 4px 10px;
+      border-radius: 20px;
+      display: inline-block;
+      font-size: 12px;
+    }
+
+    .status-reprovado {
+      background: #f8d7da;
+      color: #721c24;
+      padding: 4px 10px;
+      border-radius: 20px;
+      display: inline-block;
+      font-size: 12px;
+    }
+
+    .navegacao {
+      display: flex;
+      gap: 15px;
+      margin-top: 25px;
+    }
+
+    .nav-link {
+      flex: 1;
+      text-align: center;
+      padding: 10px;
+      background: #e0e7ff;
+      border-radius: 40px;
+      text-decoration: none;
+      color: #1e3a8a;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .nav-link:hover {
+      background: #1e3a8a;
+      color: #fff;
+    }
+
+    .info {
+      text-align: center;
+      margin-top: 20px;
+      color: #334155;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+      nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 15px;
+      }
+      nav.active {
+        display: flex;
+      }
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
       main {
-        padding: 35px 20px;
+        padding: 25px;
+      }
+      .card {
+        padding: 20px;
+      }
+      th, td {
+        padding: 8px;
+        font-size: 12px;
+      }
+      .navegacao {
+        flex-direction: column;
       }
     }
   </style>
@@ -86,22 +240,114 @@
 <body>
 
 <header class="header">
-  <h1><a href="../index.html">HOME</a></h1>
-
-  <nav>
-    <a href="trimestre1.html">I Trimestre</a>
-    <a href="trimestre2.html">II Trimestre</a>
-    <a href="trimestre3.html">III Trimestre</a>
+  <h1><a href="index.html">Sistema de Avaliação</a></h1>
+  <button class="menu-toggle">☰</button>
+  <nav id="menu">
+    <a href="ttt1.html">Cadastro</a>
+    <a href="ttt2.html">Lista de Alunos</a>
+    
   </nav>
 </header>
 
 <main>
+  <div class="card">
+    <h2>Relação de Estudantes</h2>
+    <div class="subtitulo">Todos os alunos cadastrados</div>
 
-  <div class="titulo">
-    
+    <button class="btn-limpar" onclick="limparTodos()">Limpar todos os registros</button>
+
+    <div class="tabela-wrapper">
+      <table id="tabelaEstudantes">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Disciplina</th>
+            <th>1º Tri</th>
+            <th>2º Tri</th>
+            <th>3º Tri</th>
+            <th>Média</th>
+            <th>Situação</th>
+            <th>Ação</th>
+          </tr>
+        </thead>
+        <tbody id="corpoTabela">
+          <tr><td colspan="8" style="text-align:center;">Nenhum estudante cadastrado</td</tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="navegacao">
+      <a href="ttt1.html" class="nav-link">Novo Cadastro</a>
+    </div>
+    <div class="info" id="infoTotal"></div>
   </div>
-
 </main>
+
+<script>
+  function obterEstudantes() {
+    const salvo = localStorage.getItem('estudantes_blue');
+    return salvo ? JSON.parse(salvo) : [];
+  }
+  function salvarEstudantes(estudantes) {
+    localStorage.setItem('estudantes_blue', JSON.stringify(estudantes));
+  }
+  function calcularMedia(n1,n2,n3){ return (n1+n2+n3)/3; }
+  function obterSituacao(media){
+    if(media>=10) return 'Aprovado';
+    if(media>=8) return 'Recuperação';
+    return 'Reprovado';
+  }
+  function classeSituacao(situacao){
+    if(situacao==='Aprovado') return 'status-aprovado';
+    if(situacao==='Recuperação') return 'status-recuperacao';
+    return 'status-reprovado';
+  }
+  function atualizarTabela(){
+    const estudantes = obterEstudantes();
+    const corpo = document.getElementById('corpoTabela');
+    const info = document.getElementById('infoTotal');
+    info.textContent = `Total de estudantes: ${estudantes.length}`;
+    if(estudantes.length===0){
+      corpo.innerHTML = '<tr><td colspan="8" style="text-align:center;">Nenhum estudante cadastrado</td</tr>';
+      return;
+    }
+    corpo.innerHTML = estudantes.map((est,idx) => {
+      const media = calcularMedia(est.nota1, est.nota2, est.nota3);
+      const situacao = obterSituacao(media);
+      const classe = classeSituacao(situacao);
+      return `<tr>
+        <td>${est.nome}</td>
+        <td>${est.disciplina}</td>
+        <td>${est.nota1.toFixed(1)}</td>
+        <td>${est.nota2.toFixed(1)}</td>
+        <td>${est.nota3.toFixed(1)}</td>
+        <td><strong>${media.toFixed(1)}</strong></td>
+        <td><span class="${classe}">${situacao}</span></td>
+        <td><button class="btn-excluir" onclick="excluirEstudante(${idx})">Excluir</button></td>
+      </table>`;
+    }).join('');
+  }
+  function excluirEstudante(idx){
+    if(confirm('Deseja excluir este estudante?')){
+      const estudantes = obterEstudantes();
+      estudantes.splice(idx,1);
+      salvarEstudantes(estudantes);
+      atualizarTabela();
+    }
+  }
+  function limparTodos(){
+    if(confirm('ATENÇÃO! Esta ação removerá todos os estudantes. Continuar?')){
+      localStorage.removeItem('estudantes_blue');
+      atualizarTabela();
+    }
+  }
+  atualizarTabela();
+
+  // Menu responsivo
+  const toggle = document.querySelector('.menu-toggle');
+  const menu = document.getElementById('menu');
+  toggle.addEventListener('click', () => menu.classList.toggle('active'));
+</script>
 
 </body>
 </html>
