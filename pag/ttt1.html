@@ -1,167 +1,287 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Identificador de Tipos</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro | Sistema de Avaliação</title>
 
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
 
-        body{
-            background: #f2f2f2;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+    body {
+      background: linear-gradient(135deg, #e0e7ff, #f8fafc);
+      min-height: 100vh;
+    }
+ 
+    .header {
+      background: #1e3a8a;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+    }
 
-        .container{
-            width: 400px;
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.2);
-        }
+    .header h1 a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 22px;
+      font-weight: bold;
+    }
 
-        h1{
-            text-align: center;
-            margin-bottom: 20px;
-            color: #333;
-        }
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      background: none;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+    }
 
-        input{
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            margin-bottom: 15px;
-            font-size: 16px;
-        }
+    nav {
+      display: flex;
+      gap: 12px;
+    }
 
-        button{
-            width: 100%;
-            padding: 12px;
-            border: none;
-            background: #007bff;
-            color: white;
-            font-size: 16px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+    nav a {
+      text-decoration: none;
+      padding: 8px 14px;
+      background: #2563eb;
+      color: #fff;
+      border-radius: 20px;
+      font-size: 14px;
+      transition: 0.3s;
+    }
 
-        button:hover{
-            background: #0056b3;
-        }
+    nav a:hover {
+      background: #93c5fd;
+      color: #000;
+    }
+ 
+    main {
+      display: flex;
+      justify-content: center;
+      padding: 50px;
+    }
 
-        #resultado{
-            margin-top: 20px;
-            padding: 15px;
-            background: #f8f8f8;
-            border-radius: 5px;
-            font-size: 18px;
-            line-height: 30px;
-        }
+    .card {
+      background: #ffffff;
+      padding: 35px;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      max-width: 550px;
+      width: 100%;
+    }
 
-        .tipo{
-            color: #007bff;
-            font-weight: bold;
-        }
-    </style>
+    .card h2 {
+      color: #1e3a8a;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .subtitulo {
+      text-align: center;
+      color: #334155;
+      margin-bottom: 25px;
+      font-size: 14px;
+    }
+
+    .info-notas {
+      background: #e0e7ff;
+      padding: 12px;
+      border-radius: 10px;
+      margin-bottom: 25px;
+      font-size: 13px;
+      text-align: center;
+      border-left: 4px solid #1e3a8a;
+    }
+
+    .info-notas strong {
+      color: #1e3a8a;
+    }
+
+    .campo {
+      margin-bottom: 18px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+      color: #1e3a8a;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #1e3a8a;
+      box-shadow: 0 0 0 2px rgba(30,58,138,0.2);
+    }
+
+    .btn {
+      width: 100%;
+      padding: 12px;
+      background: #1e3a8a;
+      border: none;
+      border-radius: 40px;
+      color: #fff;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+      margin-top: 10px;
+    }
+
+    .btn:hover {
+      background: #2563eb;
+      transform: scale(1.02);
+    }
+
+    .navegacao {
+      display: flex;
+      gap: 15px;
+      margin-top: 25px;
+    }
+
+    .nav-link {
+      flex: 1;
+      text-align: center;
+      padding: 10px;
+      background: #e0e7ff;
+      border-radius: 40px;
+      text-decoration: none;
+      color: #1e3a8a;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .nav-link:hover {
+      background: #1e3a8a;
+      color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+      nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 15px;
+      }
+      nav.active {
+        display: flex;
+      }
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      main {
+        padding: 25px;
+      }
+      .card {
+        padding: 25px;
+      }
+      .navegacao {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-    <div class="container">
+<header class="header">
+  <h1><a href="index.html">Sistema de Avaliação</a></h1>
+  <button class="menu-toggle">☰</button>
+  <nav id="menu">
+    <a href="cadastro.html">Cadastro</a>
+    <a href="ttt2.html">Lista de Alunos</a>
+  
+  </nav>
+</header>
 
-        <h1>Identificador de Tipos</h1>
+<main>
+  <div class="card">
+    <h2>Cadastro de Estudante</h2>
+    <div class="subtitulo">Preencha os dados abaixo</div>
 
-        <input 
-            type="text" 
-            id="valor" 
-            placeholder="Digite um valor"
-        >
+    <form id="formEstudante">
+      <div class="campo">
+        <label>Nome completo</label>
+        <input type="text" id="nome" required placeholder="Digite o nome">
+      </div>
+      <div class="campo">
+        <label>Disciplina</label>
+        <input type="text" id="disciplina" required placeholder="Ex: Matemática">
+      </div>
+      <div class="campo">
+        <label>Primeiro Trimestre </label>
+        <input type="number" id="nota1" step="0.1" min="0" max="20" required>
+      </div>
+      <div class="campo">
+        <label>Segundo Trimestre </label>
+        <input type="number" id="nota2" step="0.1" min="0" max="20" required>
+      </div>
+      <div class="campo">
+        <label>Terceiro Trimestre </label>
+        <input type="number" id="nota3" step="0.1" min="0" max="20" required>
+      </div>
+      <button type="submit" class="btn">Adicionar Estudante</button>
+    </form>
 
-        <button onclick="identificarTipo()">
-            Verificar Tipo
-        </button>
-
-        <div id="resultado">
-
-            Resultado aparecerá aqui...
-
-        </div>
-
+    <div class="navegacao">
+      <a href="tabela.html" class="nav-link">Ver Lista</a>
+     
     </div>
+  </div>
+</main>
 
-    <script>
+<script>
+  function obterEstudantes() {
+    const salvo = localStorage.getItem('estudantes_blue');
+    return salvo ? JSON.parse(salvo) : [];
+  }
+  function salvarEstudantes(estudantes) {
+    localStorage.setItem('estudantes_blue', JSON.stringify(estudantes));
+  }
+  document.getElementById('formEstudante').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const nome = document.getElementById('nome').value.trim();
+    const disciplina = document.getElementById('disciplina').value.trim();
+    const nota1 = parseFloat(document.getElementById('nota1').value);
+    const nota2 = parseFloat(document.getElementById('nota2').value);
+    const nota3 = parseFloat(document.getElementById('nota3').value);
+    if (!nome || !disciplina) { alert('Preencha nome e disciplina!'); return; }
+    if (isNaN(nota1) || isNaN(nota2) || isNaN(nota3)) { alert('Preencha todas as notas!'); return; }
+    if (nota1<0 || nota1>20 || nota2<0 || nota2>20 || nota3<0 || nota3>20) { alert('Notas devem estar entre 0 e 20!'); return; }
+    const estudantes = obterEstudantes();
+    estudantes.push({ nome, disciplina, nota1, nota2, nota3 });
+    salvarEstudantes(estudantes);
+    this.reset();
+    alert('Estudante cadastrado com sucesso!');
+  });
 
-        function identificarTipo(){
-
-            let valor = document.getElementById("valor").value;
-
-            let tipo;
-
-            // NUMBER
-            if(valor !== "" && !isNaN(valor)){
-                tipo = typeof Number(valor);
-            }
-
-            // BOOLEAN
-            else if(
-                valor.toLowerCase() === "true" ||
-                valor.toLowerCase() === "false"
-            ){
-                tipo = typeof true;
-            }
-
-            // UNDEFINED
-            else if(valor.toLowerCase() === "undefined"){
-                tipo = "undefined";
-            }
-
-            // NULL
-            else if(valor.toLowerCase() === "null"){
-                tipo = "null";
-            }
-
-            // ARRAY
-            else if(valor.startsWith("[") && valor.endsWith("]")){
-                tipo = "array";
-            }
-
-            // OBJECT
-            else if(valor.startsWith("{") && valor.endsWith("}")){
-                tipo = "object";
-            }
-
-            // FUNCTION
-            else if(valor.includes("function")){
-                tipo = "function";
-            }
-
-            // BIGINT
-            else if(valor.endsWith("n") && !isNaN(valor.slice(0, -1))){
-                tipo = "bigint";
-            }
-
-            // STRING
-            else{
-                tipo = "string";
-            }
-
-            document.getElementById("resultado").innerHTML = `
-                <p><strong>Valor:</strong> ${valor}</p>
-                <p><strong>Tipo:</strong> 
-                <span class="tipo">${tipo}</span></p>
-            `;
-        }
-
-    </script>
+  // Menu responsivo
+  const toggle = document.querySelector('.menu-toggle');
+  const menu = document.getElementById('menu');
+  toggle.addEventListener('click', () => menu.classList.toggle('active'));
+</script>
 
 </body>
 </html>
